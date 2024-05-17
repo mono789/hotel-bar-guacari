@@ -13,9 +13,12 @@ const Header = () => {
         dispatch(logout())
        
     }
-    return ( 
+    return (
+        
+       
         <nav className="main-header navbar navbar-expand navbar-white navbar-light">
             {/* Left navbar links */}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
             <ul className="navbar-nav">
                 <li className="nav-item">
                 <a className="nav-link" data-widget="pushmenu" href="/" role="button"><i className="fas fa-bars" /></a>
@@ -33,7 +36,7 @@ const Header = () => {
                     data-widget="control-sidebar" 
                     data-slide="true"  
                     role="button">
-                        <i className="fas fa-power-off"></i> Logout
+                        <i className="fas fa-power-off"></i> Salir
                 </span>
                 </li>
             </ul>

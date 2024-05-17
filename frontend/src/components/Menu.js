@@ -35,7 +35,7 @@ const Menu = ({ history }) => {
                     className="brand-image img-circle elevation-3"
                     style={{ opacity: ".8" }}
                 />
-                <span className="brand-text font-weight-light">Restobar</span>
+                <span className="brand-text font-weight-light">GUACARI</span>
             </Link>
             {/* Sidebar */}
             <div className="sidebar">
@@ -73,11 +73,11 @@ const Menu = ({ history }) => {
                             ""
                         ) : userInfo.isAdmin === true ? (
                             <>
-                                <li className="nav-header">ADMIN</li>
+                                <li className="nav-header">ADMINISTRADOR</li>
                                 <li className="nav-item">
                                     <Link to="/user" className="nav-link">
                                         <i className="nav-icon fas fa-users" />{" "}
-                                        <p> Users</p>
+                                        <p> Usuarios</p>
                                     </Link>
                                 </li>
                             </>
@@ -89,7 +89,7 @@ const Menu = ({ history }) => {
                         <li className="nav-item">
                             <Link to="/active" className="nav-link">
                                 <i className="nav-icon fas fa-bell" />{" "}
-                                <p> Active Orders</p>
+                                <p> Órdenes Activas</p>
                             </Link>
                         </li>
 
@@ -102,37 +102,44 @@ const Menu = ({ history }) => {
                         <li className="nav-item">
                             <Link to="/order" className="nav-link">
                                 <i className="nav-icon far fa-clipboard" />{" "}
-                                <p> Orders</p>
+                                <p> Historial</p>
                             </Link>
                         </li>
 
-                        <li className="nav-header">MANAGEMENT</li>
+                        <li className="nav-header">GESTIÓN</li>
 
                         <li className="nav-item">
                             <Link to="/category" className="nav-link">
                                 <i className="nav-icon fas fa-list-alt" />{" "}
-                                <p> Categories</p>
+                                <p> Categorías</p>
                             </Link>
                         </li>
 
                         <li className="nav-item">
                             <Link to="/product" className="nav-link">
                                 <i className="nav-icon fas fa-hamburger" />{" "}
-                                <p> Products</p>
+                                <p> Productos</p>
+                            </Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link to="/ingredient" className="nav-link">
+                            <i className="nav-icon fas fa-seedling" />{" "}
+                                <p> Ingredientes</p>
                             </Link>
                         </li>
 
                         <li className="nav-item">
                             <Link to="/client" className="nav-link">
                                 <i className="nav-icon fas fa-user" />{" "}
-                                <p> Clients</p>
+                                <p> Clientes</p>
                             </Link>
                         </li>
 
                         <li className="nav-item">
                             <Link to="/table" className="nav-link">
                                 <i className="nav-icon fas fa-border-all" />{" "}
-                                <p> Tables</p>
+                                <p> Mesas</p>
                             </Link>
                         </li>
                     </ul>

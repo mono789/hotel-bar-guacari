@@ -79,12 +79,11 @@ const OrderCart = ({ productsInOrder, setProductsInOrder }) => {
                 className="table table-bordered table-hover text-center"
             >
                 <thead>
-                    <tr>
-                        <th className="d-none d-sm-table-cell"></th>
-                        <th>Product</th>
-                        <th>Units</th>
-                        <th></th>
+                    <tr><th>Producto</th>
+                        <th>Unidades</th>
+                        <th>Adicionar</th>
                         <th>Total</th>
+                        <th className="d-none d-sm-table-cell">¿Eliminar?</th>
                     </tr>
                 </thead>
                 <tbody>{renderCart()}</tbody>

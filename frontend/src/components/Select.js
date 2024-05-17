@@ -32,7 +32,7 @@ const Select = ({ items, data, setData, disabled, search = () => {} }) => {
             value={current}
             onKeyDown={search}
             onFocus={search}
-            placeholder="Select value"
+            placeholder="Selecciona un valor"
             isDisabled={disabled}
             isSearchable
         />

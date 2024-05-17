@@ -77,14 +77,14 @@ const OrderCreateScreen = ({ history, match }) => {
         /* Set Errors */
         let errorsCheck = {};
         if (!table && !delivery) {
-            errorsCheck.table = "Table is required";
+            errorsCheck.table = "Mesa es requerida";
         }
         if (!client) {
-            errorsCheck.client = "Client is required";
+            errorsCheck.client = "Cliente es requerido";
         }
 
         if (productsInOrder.length < 1) {
-            errorsCheck.products = "Cart cannot by empty";
+            errorsCheck.products = "Órden no puede estar vacía";
         }
 
         /* Check errors */
@@ -179,12 +179,12 @@ const OrderCreateScreen = ({ history, match }) => {
     );
 
     const renderDeliveryCheckbox = () => (
-        <Checkbox name={"delivery"} data={delivery} setData={setDelivery} />
+        <Checkbox name={"domicilio"} data={delivery} setData={setDelivery} />
     );
 
     const renderNoteTextarea = () => (
         <Textarea
-            title={"Note (optional)"}
+            title={"Nota (opcional)"}
             rows={3}
             data={note}
             setData={setNote}
@@ -196,14 +196,14 @@ const OrderCreateScreen = ({ history, match }) => {
             onClick={handleSubmit}
             className="btn btn-success btn-lg float-right "
         >
-            Submit
+            Confirmar
         </button>
     );
 
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Orders"} />
+            <HeaderContent name={"Órdenes"} />
 
             {/* Main content */}
             <section className="content">
@@ -213,7 +213,7 @@ const OrderCreateScreen = ({ history, match }) => {
                         <div className="col-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Create Order</h3>
+                                    <h3 className="card-title">Crear órden</h3>
                                     <Loader variable={loading} />
                                     <Message message={error} color={"danger"} />
                                 </div>

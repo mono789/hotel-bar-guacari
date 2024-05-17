@@ -71,7 +71,7 @@ const CategoryEditScreen = ({ history, match }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre es requerido";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -93,7 +93,7 @@ const CategoryEditScreen = ({ history, match }) => {
     const renderForm = () => (
         <form onSubmit={handleSubmit}>
             <Input
-                name={"name"}
+                name={"nombre"}
                 type={"text"}
                 data={name}
                 setData={setName}
@@ -101,7 +101,7 @@ const CategoryEditScreen = ({ history, match }) => {
             />
             <hr />
             <button type="submit" className="btn btn-success">
-                Submit
+                Confirmar
             </button>
         </form>
     );
@@ -109,7 +109,7 @@ const CategoryEditScreen = ({ history, match }) => {
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Categories"} />
+            <HeaderContent name={"Categorias"} />
             {/* Main content */}
 
             <section className="content">
@@ -120,7 +120,7 @@ const CategoryEditScreen = ({ history, match }) => {
                             <div className="card">
                                 <div className="card-header">
                                     <h3 className="card-title">
-                                        Edit Category
+                                        Editar Categoría
                                     </h3>
                                 </div>
                                 {/* /.card-header */}

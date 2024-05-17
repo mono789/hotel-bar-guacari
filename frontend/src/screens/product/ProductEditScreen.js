@@ -80,17 +80,17 @@ const ProductEditScreen = ({ history, match }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre es requerido";
         }
         if (!price) {
-            errorsCheck.price = "Price is required";
+            errorsCheck.price = "Precio de venta es requerido";
         }
 
         if (!stock) {
-            errorsCheck.stock = "Stock is required";
+            errorsCheck.stock = "Inventario es requerido";
         }
         if (!category) {
-            errorsCheck.category = "Category is required";
+            errorsCheck.category = "Categoría es requerida";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -128,7 +128,7 @@ const ProductEditScreen = ({ history, match }) => {
     const renderForm = () => (
         <form onSubmit={handleSubmit}>
             <Input
-                name={"name"}
+                name={"nombre"}
                 type={"text"}
                 data={name}
                 setData={setName}
@@ -136,7 +136,7 @@ const ProductEditScreen = ({ history, match }) => {
             />
 
             <Input
-                name={"price"}
+                name={"precio de venta"}
                 type={"number"}
                 data={price}
                 setData={setPrice}
@@ -144,7 +144,7 @@ const ProductEditScreen = ({ history, match }) => {
             />
 
             <Input
-                name={"stock"}
+                name={"inventario"}
                 type={"number"}
                 data={stock}
                 setData={setStock}
@@ -158,7 +158,7 @@ const ProductEditScreen = ({ history, match }) => {
 
             <hr />
             <button type="submit" className="btn btn-success">
-                Submit
+                Confirmar
             </button>
         </form>
     );
@@ -166,7 +166,7 @@ const ProductEditScreen = ({ history, match }) => {
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Products"} />
+            <HeaderContent name={"Productos"} />
 
             {/* Main content */}
             <section className="content">
@@ -176,7 +176,7 @@ const ProductEditScreen = ({ history, match }) => {
                         <div className="col-12 col-md-6">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Edit Product</h3>
+                                    <h3 className="card-title">Editar Producto</h3>
                                 </div>
                                 {/* /.card-header */}
                                 <div className="card-body">

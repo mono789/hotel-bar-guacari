@@ -16,6 +16,9 @@ import OrderEditScreen from "./screens/order/OrderEditScreen";
 import TableScreen from "./screens/table/TableScreen";
 import TableEditScreen from "./screens/table/TableEditScreen";
 
+import IngredientScreen from "./screens/ingredient/IngredientScreen";
+import IngredientEditScreen from "./screens/ingredient/IngredientEditScreen";
+
 import ProductScreen from "./screens/product/ProductScreen";
 import ProductEditScreen from "./screens/product/ProductEditScreen";
 
@@ -74,6 +77,13 @@ const Main = () => {
 
                     <PrivateRoute path="/client" component={ClientScreen} />
 
+                    <PrivateRoute
+                        path="/ingredient/:id/edit"
+                        component={IngredientEditScreen}
+                    />
+
+                    <PrivateRoute path="/ingredient" component={IngredientScreen} />
+                    
                     <PrivateRoute
                         path="/product/:id/edit"
                         component={ProductEditScreen}

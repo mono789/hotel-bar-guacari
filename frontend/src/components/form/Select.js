@@ -6,7 +6,7 @@ import Message from './../Message';
 const Select = ({id = 1, setData, items, loading, error}) => {
     return ( 
         <div className="form-group">
-                  <label htmlFor="categories">Categories</label>
+                  <label htmlFor="categories">Categorias</label>
                   {loading
                   ? <Loader variable={loading} />
                   : error

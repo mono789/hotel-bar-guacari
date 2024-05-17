@@ -25,7 +25,7 @@ const OrderInfo = ({ productsInOrder, total, setTotal }) => {
                     {productsInOrder.length > 0
                         ? totalItems(productsInOrder)
                         : 0}{" "}
-                    Items in Order
+                    Items en la órden
                 </p>
             </div>
             <div className="icon">

@@ -19,7 +19,7 @@ const ModalCreate = ({
                 className="btn btn-success btn-lg mb-2"
                 onClick={() => setModalIsOpen(true)}
             >
-                <i class="fas fa-plus"></i> Create
+                <i class="fas fa-plus"></i> Crear
             </button>
 
             <Modal
@@ -27,7 +27,7 @@ const ModalCreate = ({
                 isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
             >
-                <h2>Create Form</h2>
+                <h2>Formulario Creación</h2>
                 <form onSubmit={handleSubmit}>
                     {headers.map((header, i) =>
                         data[header].type === "checkbox" ? (
@@ -82,13 +82,13 @@ const ModalCreate = ({
 
                     <hr />
                     <button type="submit" className="btn btn-primary">
-                        Submit
+                        Confirmar
                     </button>
                     <button
                         className="btn btn-danger float-right"
                         onClick={() => setModalIsOpen(false)}
                     >
-                        Close
+                        Cerrar
                     </button>
                 </form>
             </Modal>

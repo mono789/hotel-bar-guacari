@@ -31,6 +31,13 @@ import {
 } from "./reducers/clientReducers";
 
 import {
+    ingredientListReducer,
+    ingredientCreateReducer,
+    ingredientDetailsReducer,
+    ingredientUpdateReducer,
+} from "./reducers/ingredientReducers";
+
+import {
     productListReducer,
     productCreateReducer,
     productDetailsReducer,
@@ -56,6 +63,11 @@ const reducer = combineReducers({
     categoryCreate: categoryCreateReducer,
     categoryDetails: categoryDetailsReducer,
     categoryUpdate: categoryUpdateReducer,
+
+    ingredientList: ingredientListReducer,
+    ingredientCreate: ingredientCreateReducer,
+    ingredientDetails: ingredientDetailsReducer,
+    ingredientUpdate: ingredientUpdateReducer,
 
     productList: productListReducer,
     productCreate: productCreateReducer,

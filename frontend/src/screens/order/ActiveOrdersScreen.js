@@ -83,7 +83,7 @@ const ActiveOrdersScreen = ({ history }) => {
 
     return (
         <>
-            <HeaderContent name={"Tables"} />
+            <HeaderContent name={"Mesas"} />
             {/* Main content */}
 
             <section className="content">
@@ -93,7 +93,7 @@ const ActiveOrdersScreen = ({ history }) => {
                             <div className="card">
                                 <div className="card-header">
                                     <h3 className="card-title">
-                                        Occupied Tables
+                                        Mesas Ocupadas
                                     </h3>
                                 </div>
                                 {/* /.card-header */}
@@ -113,7 +113,7 @@ const ActiveOrdersScreen = ({ history }) => {
                         {/* /.col */}
                         <div className="col-12 col-md-3 col-lg-3">
                             <div className="card">
-                                <div className="card-header">Free Tables</div>
+                                <div className="card-header">Mesas Disponibles</div>
                                 <div className="card-body">
                                     <LoaderHandler
                                         loading={loading}

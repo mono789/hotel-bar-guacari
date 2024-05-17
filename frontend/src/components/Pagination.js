@@ -11,7 +11,7 @@ const Pagination = ({ pages, page, setPage }) => {
                             onClick={() => setPage(page - 1)}
                             disabled={page < 2}
                         >
-                            Previous
+                            Anterior
                         </button>
                     </li>
                     {[...Array(pages).keys()].map((x) => (
@@ -36,7 +36,7 @@ const Pagination = ({ pages, page, setPage }) => {
                             onClick={() => setPage(page + 1)}
                             disabled={page >= pages}
                         >
-                            Next
+                            Siguiente
                         </button>
                     </li>
                 </ul>

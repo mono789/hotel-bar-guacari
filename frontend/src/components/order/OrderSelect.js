@@ -30,7 +30,7 @@ const OrderSelect = ({ items, data, setData, disabled }) => {
             options={mapSelect()}
             onChange={handleChange}
             value={current}
-            placeholder="Select value"
+            placeholder="Selecciona un valor"
             isDisabled={disabled}
             isSearchable
         />

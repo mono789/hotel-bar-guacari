@@ -40,10 +40,10 @@ const DeliveryScreen = ({ history }) => {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Client</th>
-                    <th className="d-none d-sm-table-cell">Address</th>
-                    <th className="d-none d-sm-table-cell">Phone</th>
-                    <th>Check</th>
+                    <th>Cliente</th>
+                    <th className="d-none d-sm-table-cell">Dirección</th>
+                    <th className="d-none d-sm-table-cell">Tel</th>
+                    <th>Revisar</th>
                 </tr>
             </thead>
             <tbody>
@@ -62,7 +62,7 @@ const DeliveryScreen = ({ history }) => {
                                 to={`/order/${order.id}/view`}
                                 className="btn btn-info btn-lg"
                             >
-                                View
+                                Ver
                             </Link>
                         </td>
                     </tr>
@@ -75,7 +75,7 @@ const DeliveryScreen = ({ history }) => {
         <>
             <div className="card">
                 <div className="card-header">
-                    <h3 className="card-title">Active Delivery orders</h3>
+                    <h3 className="card-title">Domicilios activos</h3>
                     <div className="card-tools">
                         <Search
                             keyword={keyword}
@@ -102,7 +102,7 @@ const DeliveryScreen = ({ history }) => {
 
     return (
         <>
-            <HeaderContent name={"Delivery"} />
+            <HeaderContent name={"Domicilios"} />
 
             <section className="content">
                 <div className="container-fluid">

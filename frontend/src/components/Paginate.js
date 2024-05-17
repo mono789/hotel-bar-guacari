@@ -18,7 +18,7 @@ const Paginate = ({ item, pages, page, keyword = null }) => {
                             className="page-link"
                             style={{ color: page > 1 ? "" : "gray" }}
                         >
-                            Previous
+                            Previa
                         </span>
                     </li>
                 </Link>
@@ -53,7 +53,7 @@ const Paginate = ({ item, pages, page, keyword = null }) => {
                             className="page-link"
                             style={{ color: page < pages ? "" : "gray" }}
                         >
-                            Next
+                            Siguiente
                         </span>
                     </li>
                 </Link>

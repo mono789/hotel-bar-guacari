@@ -36,7 +36,7 @@ const ProductsTable = ({
         if (!inOrder(productIn, productsInOrder)) {
             setProductsInOrder([...productsInOrder, productIn]);
         } else {
-            alert("Product already in order");
+            alert("Producto ya está en la órden");
         }
     };
 
@@ -115,9 +115,9 @@ const ProductsTable = ({
             >
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Stock</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Inventario</th>
                     <th></th>
                 </tr>
             </thead>
@@ -131,7 +131,7 @@ const ProductsTable = ({
                         {inOrder(product, productsInOrder) ? (
                             <td className="text-center">
                                 <button disabled className="btn btn-primary">
-                                    In Order
+                                    En la órden
                                 </button>
                             </td>
                         ) : product.stock > 0 ? (
@@ -146,7 +146,7 @@ const ProductsTable = ({
                         ) : (
                             <td className="text-center">
                                 <button disabled className="btn btn-danger">
-                                    Out of Stock
+                                    Sin inventario
                                 </button>
                             </td>
                         )}

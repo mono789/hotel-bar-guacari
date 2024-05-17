@@ -20,13 +20,13 @@ const TableCrud = ({ data, itemLink }) => {
             </thead>
             <tbody>
                 {data.length < 1
-                    ? "Nothing found"
+                    ? "No se encontró nada"
                     : data.map((item, i) => (
                           <tr key={i}>
                               {headers.map((header, ih) =>
                                   typeof item[header] === "boolean" ? (
                                       <td key={ih}>
-                                          {item[header] ? "Yes" : "No"}{" "}
+                                          {item[header] ? "Sí" : "No"}{" "}
                                       </td>
                                   ) : typeof item[header] === "object" ? (
                                       <td key={ih}>
@@ -34,7 +34,7 @@ const TableCrud = ({ data, itemLink }) => {
                                               ? item[header].name
                                               : item[header].id}
                                       </td>
-                                  ) : header === "createdAt" ? (
+                                  ) : header === "Creado en" ? (
                                       <td key={ih}>
                                           {item[header].slice(0, 10)}
                                       </td>
@@ -52,7 +52,7 @@ const TableCrud = ({ data, itemLink }) => {
                               <td className="text-center">
                                   <Link to={`/${itemLink}/${item["id"]}/edit`}>
                                       <button className="btn btn-warning">
-                                          Edit
+                                          Editar
                                       </button>
                                   </Link>
                               </td>

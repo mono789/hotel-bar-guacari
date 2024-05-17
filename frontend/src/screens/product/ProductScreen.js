@@ -71,17 +71,17 @@ const ProductScreen = ({ history }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre es requerido";
         }
         if (!price) {
-            errorsCheck.price = "Price is required";
+            errorsCheck.price = "Precio de venta es requerido";
         }
 
         if (!stock) {
-            errorsCheck.stock = "Stock is required";
+            errorsCheck.stock = "Inventario es requerido";
         }
         if (!category) {
-            errorsCheck.category = "Category is required";
+            errorsCheck.category = "Categoría es requerida";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -128,24 +128,24 @@ const ProductScreen = ({ history }) => {
                 onRequestClose={() => setModalIsOpen(false)}
             >
                 <LoaderHandler loading={createLoading} error={createError} />
-                <h2>Create Form</h2>
+                <h2>Formulario Creación</h2>
                 <form onSubmit={handleSubmit}>
                     <Input
-                        name={"name"}
+                        name={"nombre"}
                         type={"text"}
                         data={name}
                         setData={setName}
                         errors={errors}
                     />
                     <Input
-                        name={"price"}
+                        name={"precio de venta"}
                         type={"number"}
                         data={price}
                         setData={setPrice}
                         errors={errors}
                     />
                     <Input
-                        name={"stock"}
+                        name={"inventario"}
                         type={"number"}
                         data={stock}
                         setData={setStock}
@@ -157,7 +157,7 @@ const ProductScreen = ({ history }) => {
                     )}
                     <hr />
                     <button type="submit" className="btn btn-primary">
-                        Submit
+                        Confirmar
                     </button>
                     <ModalButton
                         modal={modalIsOpen}
@@ -174,11 +174,11 @@ const ProductScreen = ({ history }) => {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th className="d-none d-sm-table-cell">Created At</th>
-                    <th className="d-none d-sm-table-cell">Category</th>
+                    <th>Nombre</th>
+                    <th>Precio de venta</th>
+                    <th>Inventario</th>
+                    <th className="d-none d-sm-table-cell">Creado en</th>
+                    <th className="d-none d-sm-table-cell">Categoría</th>
                     <th></th>
                 </tr>
             </thead>
@@ -200,7 +200,7 @@ const ProductScreen = ({ history }) => {
                                 to={`/product/${product.id}/edit`}
                                 className="btn btn-warning btn-lg"
                             >
-                                Edit
+                                Editar
                             </Link>
                         </td>
                     </tr>
@@ -211,7 +211,7 @@ const ProductScreen = ({ history }) => {
 
     return (
         <>
-            <HeaderContent name={"Products"} />
+            <HeaderContent name={"Productos"} />
             {/* Main content */}
 
             <section className="content">
@@ -223,7 +223,7 @@ const ProductScreen = ({ history }) => {
                             <div className="card">
                                 <div className="card-header">
                                     <h3 className="card-title">
-                                        Products table
+                                        Tabla de Productos
                                     </h3>
                                     <div className="card-tools">
                                         <Search

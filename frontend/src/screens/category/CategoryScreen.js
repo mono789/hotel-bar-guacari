@@ -57,7 +57,7 @@ const CategoryScreen = ({ history, match }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre es requerido";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -91,7 +91,7 @@ const CategoryScreen = ({ history, match }) => {
                 <LoaderHandler loading={createLoading} error={createError} />
                 <form onSubmit={handleSubmit}>
                     <Input
-                        name={"name"}
+                        name={"nombre"}
                         type={"text"}
                         data={name}
                         setData={setName}
@@ -100,7 +100,7 @@ const CategoryScreen = ({ history, match }) => {
 
                     <hr />
                     <button type="submit" className="btn btn-primary">
-                        Submit
+                        Confirmar
                     </button>
 
                     <ModalButton
@@ -118,8 +118,8 @@ const CategoryScreen = ({ history, match }) => {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th className="d-none d-sm-table-cell">Created At</th>
+                    <th>Nombre</th>
+                    <th className="d-none d-sm-table-cell">Creado en</th>
                     <th></th>
                 </tr>
             </thead>
@@ -136,7 +136,7 @@ const CategoryScreen = ({ history, match }) => {
                                 to={`/category/${category.id}/edit`}
                                 className="btn btn-warning btn-lg"
                             >
-                                Edit
+                                Editar
                             </Link>
                         </td>
                     </tr>
@@ -147,7 +147,7 @@ const CategoryScreen = ({ history, match }) => {
 
     return (
         <>
-            <HeaderContent name={"Categories"} />
+            <HeaderContent name={"Categorías"} />
 
             {/* Main content */}
 
@@ -159,7 +159,7 @@ const CategoryScreen = ({ history, match }) => {
                         <div className="col-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Categories</h3>
+                                    <h3 className="card-title">Categorías</h3>
                                     <div className="card-tools">
                                         <Search
                                             keyword={keyword}

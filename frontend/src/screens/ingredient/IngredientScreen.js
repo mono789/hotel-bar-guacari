@@ -131,21 +131,21 @@ const IngredientScreen = ({ history }) => {
                 <h2>Formulario Creación</h2>
                 <form onSubmit={handleSubmit}>
                     <Input
-                        name={"name"}
+                        name={"Ingrediente"}
                         type={"text"}
                         data={name}
                         setData={setName}
                         errors={errors}
                     />
                     <Input
-                        name={"cost"}
+                        name={"Costo"}
                         type={"number"}
                         data={cost}
                         setData={setCost}
                         errors={errors}
                     />
                     <Input
-                        name={"stock"}
+                        name={"Cantidad"}
                         type={"number"}
                         data={stock}
                         setData={setStock}

@@ -6,12 +6,13 @@ const { Op } = require("sequelize");
 //@desc     Create a ingredient
 //@route    POST /api/ingredients
 //@access   Private/ingredient
+
 exports.createIngredient = asyncHandler(async (req, res) => {
-    const { name, price, stock, categoryId } = req.body;
+    const { name, cost, stock, categoryId } = req.body;
     const category = await Category.findByPk(categoryId);
 
     if (category) {
-        createdIngredient = await category.createIngredient({ name, price, stock });
+        const createdIngredient = await category.createIngredient({ name, cost, stock });
         res.json(createdIngredient);
     } else {
         res.status(404);
@@ -22,6 +23,7 @@ exports.createIngredient = asyncHandler(async (req, res) => {
 //@desc     Get all ingredients
 //@route    GET /api/ingredients
 //@access   Private/user
+
 exports.getIngredients = asyncHandler(async (req, res) => {
     const pageSize = 5;
     const page = Number(req.query.pageNumber) || 1;
@@ -45,7 +47,7 @@ exports.getIngredients = asyncHandler(async (req, res) => {
                 [Op.or]: [
                     { id: { [Op.like]: `%${keyword}%` } },
                     { name: { [Op.like]: `%${keyword}%` } },
-                    { price: keyword },
+                    { cost: keyword },
                     { "$category.name$": { [Op.like]: `%${keyword}%` } },
                 ],
             },
@@ -77,13 +79,13 @@ exports.getIngredient = asyncHandler(async (req, res) => {
 //@route    PUT /api/ingredients/:id
 //@access   Private/user
 exports.updateIngredient = asyncHandler(async (req, res) => {
-    const { name, price, stock, category } = req.body;
+    const { name, cost, stock, category } = req.body;
 
     const ingredient = await Ingredient.findByPk(req.params.id);
 
     if (ingredient) {
         ingredient.name = name;
-        ingredient.price = price;
+        ingredient.cost = cost;
         ingredient.stock = stock;
         ingredient.categoryId = category;
         const updatedIngredient = await ingredient.save();

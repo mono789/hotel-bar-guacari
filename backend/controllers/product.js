@@ -6,6 +6,7 @@ const { Op } = require("sequelize");
 //@desc     Create a product
 //@route    POST /api/products
 //@access   Private/product
+
 exports.createProduct = asyncHandler(async (req, res) => {
     const { name, price, stock, categoryId } = req.body;
     const category = await Category.findByPk(categoryId);
@@ -18,6 +19,7 @@ exports.createProduct = asyncHandler(async (req, res) => {
         throw new Error("Category not found");
     }
 });
+
 
 //@desc     Get all products
 //@route    GET /api/products

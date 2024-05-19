@@ -6,7 +6,7 @@ exports.ingredientCreateValidator = [
         .withMessage('Name is required')
         .isString()
         .withMessage('Name must be a string'),
-    check('price')
+    check('cost')
         .notEmpty()
         .withMessage('Price is required')
         .isFloat()

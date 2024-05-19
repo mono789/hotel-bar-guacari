@@ -22,6 +22,7 @@ const clientRoutes = require("./routes/client");
 const tableRoutes = require("./routes/table");
 const orderRoutes = require("./routes/order");
 const uploadRoutes = require("./routes/upload");
+const ingredientRoutes = require("./routes/ingredient");
 
 /* Routes */
 app.use("/api/users", userRoutes);
@@ -31,6 +32,8 @@ app.use("/api/clients", clientRoutes);
 app.use("/api/tables", tableRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/upload", uploadRoutes);
+app.use("/api/ingredients", ingredientRoutes);
+
 
 const rootPath = path.resolve();
 

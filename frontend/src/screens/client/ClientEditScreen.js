@@ -76,21 +76,21 @@ const ClientEditScreen = ({ history, match }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre es requerido";
         }
         if (!address) {
-            errorsCheck.address = "Address is required";
+            errorsCheck.address = "Dirección es requerida";
         }
 
         if (!phone) {
-            errorsCheck.phone = "Phone is required";
+            errorsCheck.phone = "Teléfono es requerido";
         }
         if (!email) {
-            errorsCheck.email = "Email is required";
+            errorsCheck.email = "Email es requerido.";
         }
 
         if (!dni) {
-            errorsCheck.dni = "DNI is required";
+            errorsCheck.dni = "CC es requerida";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -116,21 +116,21 @@ const ClientEditScreen = ({ history, match }) => {
     const renderForm = () => (
         <form onSubmit={handleSubmit}>
             <Input
-                name={"Name"}
+                name={"Nombre"}
                 type={"text"}
                 data={name}
                 setData={setName}
                 errors={errors}
             />
             <Input
-                name={"Address"}
+                name={"Dirección"}
                 type={"text"}
                 data={address}
                 setData={setAddress}
                 errors={errors}
             />
             <Input
-                name={"Phone"}
+                name={"Tel"}
                 type={"text"}
                 data={phone}
                 setData={setPhone}
@@ -144,7 +144,7 @@ const ClientEditScreen = ({ history, match }) => {
                 errors={errors}
             />
             <Input
-                name={"DNI"}
+                name={"CC"}
                 type={"text"}
                 data={dni}
                 setData={setDni}
@@ -153,7 +153,7 @@ const ClientEditScreen = ({ history, match }) => {
 
             <hr />
             <button type="submit" className="btn btn-success">
-                Submit
+                Confirmar
             </button>
         </form>
     );
@@ -161,7 +161,7 @@ const ClientEditScreen = ({ history, match }) => {
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Clients"} />
+            <HeaderContent name={"Clientes"} />
 
             {/* Main content */}
 
@@ -172,7 +172,7 @@ const ClientEditScreen = ({ history, match }) => {
                         <div className="col-12 col-md-6">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Edit Client</h3>
+                                    <h3 className="card-title">Editar Cliente</h3>
                                 </div>
                                 {/* /.card-header */}
                                 <div className="card-body">

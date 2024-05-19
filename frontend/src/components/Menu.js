@@ -30,10 +30,10 @@ const Menu = ({ history }) => {
             {/* Brand Logo */}
             <Link to={"/dashboard"} className="brand-link">
                 <img
-                    src="/logo.png"
-                    alt="AdminLTE Logo"
+                    src="/guacari.png"
+                    alt="Guacarí Logo"
                     className="brand-image img-circle elevation-3"
-                    style={{ opacity: ".8" }}
+                    style={{ opacity: ".9" }}
                 />
                 <span className="brand-text font-weight-light">GUACARI</span>
             </Link>
@@ -65,7 +65,7 @@ const Menu = ({ history }) => {
                         <li className="nav-item">
                             <Link to="/dashboard" className="nav-link">
                                 <i className="nav-icon fas fa-tachometer-alt" />{" "}
-                                <p> Dashboard</p>
+                                <p> Panel General</p>
                             </Link>
                         </li>
 

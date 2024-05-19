@@ -9,6 +9,11 @@ import HeaderContent from "../../components/HeaderContent";
 import ButtonGoBack from "../../components/ButtonGoBack";
 import LoaderHandler from "../../components/loader/LoaderHandler";
 
+/* Order components */
+import ProductsTable from "../../components/order/ProductsTable";
+import OrderInfo from "../../components/order/OrderInfo";
+import OrderCart from "../../components/order/OrderCart";
+
 /* Constants */
 import {
     PRODUCT_UPDATE_RESET,

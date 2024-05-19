@@ -79,9 +79,9 @@ const DashboardScreen = ({ history }) => {
                     <td className="font-weight-bold">{sales[i].id}</td>
                     <td className="h4">
                         {sales[i].delivery ? (
-                            <span className={"badge bg-primary"}>IN PLACE</span>
+                            <span className={"badge bg-primary"}>EN RESTAURANTE</span>
                         ) : (
-                            <span className={"badge bg-info"}>DELIVERY</span>
+                            <span className={"badge bg-info"}>DOMICILIO</span>
                         )}
                     </td>
                     <td className="h4">
@@ -112,7 +112,7 @@ const DashboardScreen = ({ history }) => {
         <>
             <SmallBox
                 number={orders.length}
-                paragraph={"Active orders"}
+                paragraph={"Órdenes Activas"}
                 link={"order"}
                 color={"success"}
                 icon={"fas fa-utensils"}
@@ -120,14 +120,14 @@ const DashboardScreen = ({ history }) => {
 
             <SmallBox
                 number={ordersInPlace(orders).length}
-                paragraph={"In Place Orders"}
+                paragraph={"Órdenes en restaurante"}
                 link={"active"}
                 color={"info"}
                 icon={"fas fa-users"}
             />
             <SmallBox
                 number={ordersForDelivery(orders).length}
-                paragraph={"Orders for delivery"}
+                paragraph={"Órdenes a domicilio"}
                 link={"delivery"}
                 color={"danger"}
                 icon={"fas fa-truck"}
@@ -135,7 +135,7 @@ const DashboardScreen = ({ history }) => {
 
             <SmallBox
                 number={orders.length}
-                paragraph={"Total orders"}
+                paragraph={"Total órdenes"}
                 link={"order"}
                 color={"warning"}
                 icon={"ion ion-bag"}
@@ -148,7 +148,7 @@ const DashboardScreen = ({ history }) => {
             <div className="col-12 col-lg-6">
                 <div className="card">
                     <div className="card-header border-0">
-                        <h3 className="card-title">Last Sales</h3>
+                        <h3 className="card-title">Últimas ventas</h3>
                         <div className="card-tools">
                             <Link to="/order" className="btn btn-tool btn-sm">
                                 <i className="nav-icon far fa-clipboard" />
@@ -160,10 +160,10 @@ const DashboardScreen = ({ history }) => {
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Type</th>
+                                    <th>Tipo</th>
                                     <th>Total</th>
-                                    <th>Products</th>
-                                    <th>More</th>
+                                    <th>Productos</th>
+                                    <th>Más</th>
                                 </tr>
                             </thead>
                             <tbody>{returnSales(sales)}</tbody>
@@ -174,7 +174,7 @@ const DashboardScreen = ({ history }) => {
             <div className="col-12 col-lg-6">
                 <div className="card">
                     <div className="card-header border-0">
-                        <h3 className="card-title">Restobar Overview</h3>
+                        <h3 className="card-title">Restobar Panorama</h3>
                     </div>
                     <div className="card-body">
                         <div className="d-flex justify-content-between align-items-center border-bottom mb-3">
@@ -187,7 +187,7 @@ const DashboardScreen = ({ history }) => {
                                     {statistics && statistics.orders}
                                 </span>
                                 <span className="text-muted">
-                                    TOTAL ORDERS COMPLETED
+                                    TOTAL ÓRDENES COMPLETADAS
                                 </span>
                             </p>
                         </div>
@@ -202,7 +202,7 @@ const DashboardScreen = ({ history }) => {
                                     {statistics && statistics.deliveries}
                                 </span>
                                 <span className="text-muted">
-                                    TOTAL DELIVERIES COMPLETED
+                                    TOTAL DOMICILIOS COMPLETADOS
                                 </span>
                             </p>
                         </div>
@@ -217,7 +217,7 @@ const DashboardScreen = ({ history }) => {
                                         {statistics && statistics.today}
                                     </span>
                                 </span>
-                                <span className="text-muted">TODAY SALES</span>
+                                <span className="text-muted">VENTAS HOY</span>
                             </p>
                         </div>
                         {/* /.d-flex */}
@@ -232,7 +232,7 @@ const DashboardScreen = ({ history }) => {
                                         {statistics && statistics.total}
                                     </span>
                                 </span>
-                                <span className="text-muted">TOTAL SALES</span>
+                                <span className="text-muted">TOTAL VENTAS</span>
                             </p>
                         </div>
                         {/* /.d-flex */}
@@ -246,9 +246,9 @@ const DashboardScreen = ({ history }) => {
         <table className="table m-0 table-hover">
             <thead>
                 <tr>
-                    <th>Order ID</th>
-                    <th>Client</th>
-                    <th>Table</th>
+                    <th>Órden ID</th>
+                    <th>Cliente</th>
+                    <th>Mesa</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -299,7 +299,7 @@ const DashboardScreen = ({ history }) => {
 
     return (
         <>
-            <HeaderContent name={"Dashboard"} />
+            <HeaderContent name={"Panel General"} />
 
             <section className="content">
                 <div className="container-fluid">
@@ -326,7 +326,7 @@ const DashboardScreen = ({ history }) => {
                             <div className="card">
                                 <div className="card-header border-transparent">
                                     <h3 className="card-title">
-                                        Latest In Place Orders
+                                        Últimas órdenes realizadas
                                     </h3>
                                     <div className="card-tools">
                                         <button
@@ -353,13 +353,13 @@ const DashboardScreen = ({ history }) => {
                                         to={"/order/create"}
                                         className="btn btn-sm btn-info float-left"
                                     >
-                                        Place New Order
+                                        Generar nueva órden
                                     </Link>
                                     <Link
                                         to={"/order"}
                                         className="btn btn-sm btn-secondary float-right"
                                     >
-                                        View All Orders
+                                        Ver todas las órdenes
                                     </Link>
                                 </div>
                             </div>
@@ -368,7 +368,7 @@ const DashboardScreen = ({ history }) => {
                             <div className="card">
                                 <div className="card-header">
                                     <h3 className="card-title">
-                                        Recently Added Delivery Orders
+                                        Últimos domicilios generados
                                     </h3>
                                     <div className="card-tools">
                                         <button
@@ -395,7 +395,7 @@ const DashboardScreen = ({ history }) => {
                                         to={"/delivery"}
                                         className="uppercase"
                                     >
-                                        View All Delivery Orders
+                                        Ver todos los domicilios
                                     </Link>
                                 </div>
                             </div>

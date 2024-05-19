@@ -86,21 +86,21 @@ const ProfileScreen = ({ history }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required.";
+            errorsCheck.name = "Nombre es requerido.";
         }
 
         if (password.length > 0 && password.length < 6) {
             errorsCheck.password =
-                "Password must be at least 6 characters long.";
+                "La contraseña debe tener 6 carácteres o más.";
         }
 
         if (!email) {
-            errorsCheck.email = "Email is required.";
+            errorsCheck.email = "Email es requerido.";
         }
 
         if (confirmPassword.length > 0 && confirmPassword.length < 6) {
             errorsCheck.confirmPassword =
-                "Password must be at least 6 characters long.";
+                "La contraseña debe tener 6 carácteres o más.";
         }
 
         if (
@@ -108,7 +108,7 @@ const ProfileScreen = ({ history }) => {
             confirmPassword.length > 5 &&
             confirmPassword !== password
         ) {
-            errorsCheck.confirmPassword = "Passwords must be the same.";
+            errorsCheck.confirmPassword = "Las contraseñas deben ser iguales.";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -128,7 +128,7 @@ const ProfileScreen = ({ history }) => {
         let errorsCheck = {};
 
         if (!passwordCheck.length) {
-            errorsCheck.passwordCheck = "Password is required.";
+            errorsCheck.passwordCheck = "La contraseña es requerida.";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -189,7 +189,7 @@ const ProfileScreen = ({ history }) => {
     const renderForm = () => (
         <form onSubmit={handleSubmit}>
             <Input
-                name={"name"}
+                name={"nombre"}
                 type={"text"}
                 data={name}
                 setData={setName}
@@ -203,14 +203,14 @@ const ProfileScreen = ({ history }) => {
                 errors={errors}
             />
             <Input
-                name={"password"}
+                name={"contraseña"}
                 type={"password"}
                 data={password}
                 setData={setPassword}
                 errors={errors}
             />
             <Input
-                name={"confirmPassword"}
+                name={"confirma contraseña"}
                 type={"password"}
                 data={confirmPassword}
                 setData={setConfirmPassword}
@@ -218,13 +218,13 @@ const ProfileScreen = ({ history }) => {
             />
             <FileInput
                 fileHandler={uploadingFileHandler}
-                name={"photo"}
+                name={"foto"}
                 image={imageName(image)}
                 uploading={uploading}
             />
             <hr />
             <button type="submit" className="btn btn-primary btn-block">
-                Update
+                Actualizar
             </button>
         </form>
     );
@@ -242,7 +242,7 @@ const ProfileScreen = ({ history }) => {
                 {userInfo && userInfo.name}
             </h3>
             <p className="text-muted text-center">
-                {userInfo && userInfo.isAdmin ? "Administrator" : "Employee"}
+                {userInfo && userInfo.isAdmin ? "Administrador" : "Empleado"}
             </p>
         </>
     );
@@ -261,14 +261,13 @@ const ProfileScreen = ({ history }) => {
             isOpen={modal}
             onRequestClose={() => setModal(false)}
         >
-            <h2>Password check</h2>
+            <h2>Verifica tu contraseña</h2>
             <p>
-                For security reasons, please insert your actual password to
-                confirm changes.
+                Por seguridad, verifica tu contraseña actual.
             </p>
             <form onSubmit={handleModalSubmit}>
                 <Input
-                    name={"passwordCheck"}
+                    name={"verificación de contraseña"}
                     type={"password"}
                     data={passwordCheck}
                     setData={setPasswordCheck}
@@ -276,7 +275,7 @@ const ProfileScreen = ({ history }) => {
                 />
                 <hr />
                 <button type="submit" className="btn btn-primary">
-                    Submit
+                    Confirmar
                 </button>
 
                 <ModalButton
@@ -290,7 +289,7 @@ const ProfileScreen = ({ history }) => {
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Profile"} />
+            <HeaderContent name={"Perfil"} />
             {/* Main content */}
             <section className="content">
                 <div className="container-fluid">

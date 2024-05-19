@@ -66,21 +66,21 @@ const ClientScreen = ({ history }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre es requerido";
         }
         if (!address) {
-            errorsCheck.address = "Address is required";
+            errorsCheck.address = "Dirección es requerida";
         }
 
         if (!phone) {
-            errorsCheck.phone = "Phone is required";
+            errorsCheck.phone = "Teléfono es requerido";
         }
         if (!email) {
-            errorsCheck.email = "Email is required";
+            errorsCheck.email = "Email es requerido";
         }
 
         if (!dni) {
-            errorsCheck.dni = "DNI is required";
+            errorsCheck.dni = "CC requerida";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -118,21 +118,21 @@ const ClientScreen = ({ history }) => {
                 <h2>Create Form</h2>
                 <form onSubmit={handleSubmit}>
                     <Input
-                        name={"name"}
+                        name={"nombre"}
                         type={"text"}
                         data={name}
                         setData={setName}
                         errors={errors}
                     />
                     <Input
-                        name={"address"}
+                        name={"dirección"}
                         type={"text"}
                         data={address}
                         setData={setAddress}
                         errors={errors}
                     />
                     <Input
-                        name={"phone"}
+                        name={"tel"}
                         type={"text"}
                         data={phone}
                         setData={setPhone}
@@ -146,7 +146,7 @@ const ClientScreen = ({ history }) => {
                         errors={errors}
                     />
                     <Input
-                        name={"dni"}
+                        name={"CC"}
                         type={"text"}
                         data={dni}
                         setData={setDni}
@@ -154,7 +154,7 @@ const ClientScreen = ({ history }) => {
                     />
                     <hr />
                     <button type="submit" className="btn btn-primary">
-                        Submit
+                        Confirmar
                     </button>
                     <ModalButton
                         modal={modalIsOpen}
@@ -171,12 +171,12 @@ const ClientScreen = ({ history }) => {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th className="d-none d-sm-table-cell">Address</th>
-                    <th className="d-none d-sm-table-cell">Phone</th>
+                    <th>Nombre</th>
+                    <th className="d-none d-sm-table-cell">Dirección</th>
+                    <th className="d-none d-sm-table-cell">Tel</th>
                     <th className="d-none d-sm-table-cell">Email</th>
-                    <th className="d-none d-sm-table-cell">DNI</th>
-                    <th className="d-none d-sm-table-cell">Created At</th>
+                    <th className="d-none d-sm-table-cell">CC</th>
+                    <th className="d-none d-sm-table-cell">Creado en</th>
                     <th></th>
                 </tr>
             </thead>
@@ -203,7 +203,7 @@ const ClientScreen = ({ history }) => {
                                 to={`/client/${client.id}/edit`}
                                 className="btn btn-warning btn-lg"
                             >
-                                Edit
+                                Editar
                             </Link>
                         </td>
                     </tr>
@@ -214,7 +214,7 @@ const ClientScreen = ({ history }) => {
 
     return (
         <>
-            <HeaderContent name={"Clients"} />
+            <HeaderContent name={"Clientes"} />
 
             <section className="content">
                 <div className="container-fluid">
@@ -223,7 +223,7 @@ const ClientScreen = ({ history }) => {
                         <div className="col-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Clients</h3>
+                                    <h3 className="card-title">Clientes</h3>
                                     <div className="card-tools">
                                         <Search
                                             keyword={keyword}

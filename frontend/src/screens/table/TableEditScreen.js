@@ -71,7 +71,7 @@ const TableEditScreen = ({ history, match }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre es requerido";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -93,17 +93,17 @@ const TableEditScreen = ({ history, match }) => {
     const renderForm = () => (
         <form onSubmit={handleSubmit}>
             <Input
-                name={"name"}
+                name={"nombre"}
                 type={"text"}
                 data={name}
                 setData={setName}
                 errors={errors}
             />
-            <Checkbox name={"occupied"} data={occupied} setData={setOccupied} />
+            <Checkbox name={"ocupada"} data={occupied} setData={setOccupied} />
 
             <hr />
             <button type="submit" className="btn btn-success">
-                Submit
+                Confirmar
             </button>
         </form>
     );
@@ -111,7 +111,7 @@ const TableEditScreen = ({ history, match }) => {
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Tables"} />
+            <HeaderContent name={"Mesas"} />
 
             {/* Main content */}
 
@@ -122,7 +122,7 @@ const TableEditScreen = ({ history, match }) => {
                         <div className="col-12 col-md-6">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Edit Table</h3>
+                                    <h3 className="card-title">Editar mesa</h3>
                                 </div>
                                 {/* /.card-header */}
                                 <div className="card-body">

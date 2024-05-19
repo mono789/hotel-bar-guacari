@@ -66,11 +66,11 @@ const OrderViewScreen = ({ history, match }) => {
             isOpen={modal}
             onRequestClose={() => setModal(false)}
         >
-            <h2 className="text-center">Order Payment</h2>
-            <p className="text-center">Is order already paid?.</p>
+            <h2 className="text-center">Pago de órden</h2>
+            <p className="text-center">¿La órden ya fue pagada?</p>
             <form onSubmit={handlePay}>
                 <button type="submit" className="btn btn-primary">
-                    Yes, close order.
+                    Sí, finalizar.
                 </button>
 
                 <ModalButton
@@ -114,7 +114,7 @@ const OrderViewScreen = ({ history, match }) => {
                         {order.products.length > 0
                             ? totalItems(order.products)
                             : 0}{" "}
-                        Items in Order
+                        Items en la órden
                     </p>
                 </div>
                 <div className="icon">
@@ -130,9 +130,9 @@ const OrderViewScreen = ({ history, match }) => {
         >
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -173,7 +173,7 @@ const OrderViewScreen = ({ history, match }) => {
                     <div className="col-12 col-md-6">
                         <ViewBox
                             title={order.id}
-                            paragraph={"ORDER ID"}
+                            paragraph={"ÓRDEN ID"}
                             icon={"far fa-clipboard"}
                             color={"bg-info"}
                         />
@@ -182,8 +182,8 @@ const OrderViewScreen = ({ history, match }) => {
                     {order.isPaid ? (
                         <div className="col-12 col-md-6">
                             <ViewBox
-                                title={"Paid"}
-                                paragraph={"Order is already paid"}
+                                title={"Pagada"}
+                                paragraph={"Órden ya fue pagada."}
                                 icon={"fas fa-check"}
                                 color={"bg-success"}
                             />
@@ -191,8 +191,8 @@ const OrderViewScreen = ({ history, match }) => {
                     ) : (
                         <div className="col-12 col-md-6">
                             <ViewBox
-                                title={"Not Paid"}
-                                paragraph={"Order is still not paid"}
+                                title={"No pagada"}
+                                paragraph={"Órden no ha sido pagada."}
                                 icon={"far fa-times-circle"}
                                 color={"bg-danger"}
                             />
@@ -223,7 +223,7 @@ const OrderViewScreen = ({ history, match }) => {
                         <div className="col-12 col-md-6">
                             {order.client && (
                                 <ViewBox
-                                    title={"Delivery"}
+                                    title={"Domicilio"}
                                     paragraph={order.client.address}
                                     icon={"fas fa-truck"}
                                     color={"bg-primary"}
@@ -235,7 +235,7 @@ const OrderViewScreen = ({ history, match }) => {
 
                 <div className="col-12">
                     <ViewBox
-                        title={"Note:"}
+                        title={"Nota:"}
                         paragraph={order.note}
                         icon={"far fa-sticky-note"}
                         color={"bg-silver"}
@@ -246,12 +246,12 @@ const OrderViewScreen = ({ history, match }) => {
 
     const renderOrderEdit = () => (
         <div className="card">
-            <div className="card-header bg-warning">Edit Order</div>
+            <div className="card-header bg-warning">Editar órden</div>
             <div className="card-body">
                 <button className="btn btn-block" onClick={handleEdit}>
                     <ViewBox
-                        title={`Edit Order`}
-                        paragraph={`Click to Edit`}
+                        title={`Editar órden`}
+                        paragraph={`Click para editar`}
                         icon={"fas fa-edit"}
                         color={"bg-warning"}
                     />
@@ -262,15 +262,15 @@ const OrderViewScreen = ({ history, match }) => {
 
     const renderOrderPay = () => (
         <div className="card">
-            <div className="card-header bg-success">Update to Paid</div>
+            <div className="card-header bg-success">Actualizar a pagada</div>
             <div className="card-body">
                 <button
                     className="btn btn-block"
                     onClick={() => setModal(true)}
                 >
                     <ViewBox
-                        title={`PAY $${order.total}`}
-                        paragraph={`Click to Pay`}
+                        title={`PAGO $${order.total}`}
+                        paragraph={`Click para pagar`}
                         icon={"fas fa-hand-holding-usd"}
                         color={"bg-success"}
                     />
@@ -305,7 +305,7 @@ const OrderViewScreen = ({ history, match }) => {
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Orders"} />
+            <HeaderContent name={"Órdenes"} />
             <LoaderHandler loading={loadingUpdate} error={errorUpdate} />
             {/* Main content */}
             <section className="content">
@@ -317,7 +317,7 @@ const OrderViewScreen = ({ history, match }) => {
 
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">View Order</h3>
+                                    <h3 className="card-title">Ver órden</h3>
                                 </div>
                                 {/* /.card-header */}
                                 <div className="card-body">

@@ -10,6 +10,11 @@ import { BigSpin } from "../loader/SvgLoaders";
 /* actions */
 import { listProducts } from "../../actions/productActions";
 
+import "../../../src/utils/menu.css"
+import LinesEllipsis from "react-lines-ellipsis";
+
+
+
 const ProductsTable = ({
     productsInOrder,
     setProductsInOrder,
@@ -105,56 +110,97 @@ const ProductsTable = ({
         </button>
     );
 
-    const renderProducts = () => (
-        <table id="productsTable" className="table table-bordered table-hover ">
-            <thead
-                style={{
-                    color: "#fff",
-                }}
-                className="bg-info"
-            >
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Inventario</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {products.map((product) => (
-                    <tr key={product.id}>
-                        <td>{product.id}</td>
-                        <td>{product.name}</td>
-                        <td>${product.price}</td>
-                        <td>{showStock(product)}</td>
-                        {inOrder(product, productsInOrder) ? (
-                            <td className="text-center">
-                                <button disabled className="btn btn-primary">
-                                    En la órden
-                                </button>
-                            </td>
-                        ) : product.stock > 0 ? (
-                            <td className="text-center">
-                                <button
-                                    className="btn btn-success"
-                                    onClick={(e) => addProduct(e, product)}
-                                >
-                                    <i className="fas fa-plus"></i>
-                                </button>
-                            </td>
-                        ) : (
-                            <td className="text-center">
-                                <button disabled className="btn btn-danger">
-                                    Sin inventario
-                                </button>
-                            </td>
-                        )}
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    );
+    const getCategoryBackgroundClass = (category) => {
+        switch (category) {
+            case 'CERVEZAS':
+                return 'category1-background'; // Clase CSS para la primera categoría
+            case 'HAMBURGUESAS':
+                return 'category2-background'; // Clase CSS para la segunda categoría
+            case 'GASEOSAS':
+                return 'category3-background'; // Clase CSS para la tercera categoría
+            // Agrega más casos según sea necesario para otras categorías
+            default:
+                return ''; // Si no hay una categoría definida, no se aplica ningún color de fondo
+        }
+    };
+
+    const renderProducts1 = () => {
+       // Obtener todas las categorías únicas de los productos
+       const uniqueCategories = [...new Set(products.map(product => product.category.name))];
+
+       return (
+           <div className="row" style={{ overflowY: 'auto', maxHeight: '600px'}}>
+               {uniqueCategories.map(category => (
+                   <div key={category} className="col-md-12">
+                       <h2>{category}</h2> {/* Título de la categoría */}
+                       <div className="row">
+                           {products.map(product => {
+                               if (product.category.name === category) {
+                                   // Calcula el tamaño de la columna en función del número de productos en la fila
+                                   const columnSize = Math.max(Math.floor(12 / Math.min(products.length, 4)), 3);
+                                   return (
+                                       <div key={product.id} className={`col-md-${columnSize}`}>
+                                           {/* Aquí colocas la lógica de renderizado de cada producto */}
+                                           {inOrder(product, productsInOrder) ? (
+                                               <button disabled className={`product-name-${getCategoryBackgroundClass(product.category.name)}`}>
+                                                   <div className="button-content">
+                                                       <p>
+                                                           {product.name}
+                                                       </p>
+                                                       <h4>
+                                                           En la orden
+                                                       </h4>
+                                                       <p>
+                                                        Inventario: {product.stock}
+                                                    </p>
+                                                   </div>
+                                               </button>
+                                           ) : product.stock > 0 ? (
+                                               <button
+                                                   className={`product-name-${getCategoryBackgroundClass(product.category.name)}`}
+                                                   onClick={(e) => addProduct(e, product)}
+                                               >
+                                                <div className="button-content">
+                                                    <h4>
+                                                       <LinesEllipsis
+                                                           text={product.name}
+                                                           maxLine={3}
+                                                           ellipsis="..."
+                                                           trimRight
+                                                           basedOn="letters"
+                                                       />
+                                                   </h4>
+                                                   <p>
+                                                        Inventario: {product.stock}
+                                                    </p>
+                                                   
+                                                </div>
+                                                   
+                                               </button>
+                                           ) : (
+                                               <button disabled className={`product-name-${getCategoryBackgroundClass(product.category.name)}`}>
+                                                   Sin inventario
+                                               </button>
+                                           )}
+                                       </div>
+                                   );
+                               }
+                               return null; // Devuelve null si el producto no pertenece a la categoría actual
+                           })}
+                       </div>
+                   </div>
+               ))}
+           </div>
+       );
+   };
+
+
+
+
+
+
+
+    
 
     return (
         <>
@@ -167,11 +213,9 @@ const ProductsTable = ({
             <LoaderHandler
                 loading={loadingProductList}
                 error={errorProductList}
-                render={renderProducts}
+                render={renderProducts1}
                 loader={<BigSpin />}
             />
-
-            <Pagination pages={pages} page={page} setPage={setPageNumber} />
         </>
     );
 };

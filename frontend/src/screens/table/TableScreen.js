@@ -59,7 +59,7 @@ const TableScreen = ({ history }) => {
         let errorsCheck = {};
 
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre o número de mesa es requerido";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -83,9 +83,9 @@ const TableScreen = ({ history }) => {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Occupied</th>
-                        <th className="d-none d-sm-table-cell">Created At</th>
+                        <th>Número</th>
+                        <th>Ocupada</th>
+                        <th className="d-none d-sm-table-cell">Creada en</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -113,7 +113,7 @@ const TableScreen = ({ history }) => {
                                     to={`/table/${table.id}/edit`}
                                     className="btn btn-warning btn-lg"
                                 >
-                                    Edit
+                                    Editar
                                 </Link>
                             </td>
                         </tr>
@@ -139,7 +139,7 @@ const TableScreen = ({ history }) => {
                 <LoaderHandler loading={createLoading} error={createError} />
                 <form onSubmit={handleSubmit}>
                     <Input
-                        name={"name"}
+                        name={"nombre o número"}
                         type={"text"}
                         data={name}
                         setData={setName}
@@ -147,7 +147,7 @@ const TableScreen = ({ history }) => {
                     />
                     <hr />
                     <button type="submit" className="btn btn-primary">
-                        Submit
+                        Confirmar
                     </button>
 
                     <ModalButton
@@ -162,7 +162,7 @@ const TableScreen = ({ history }) => {
 
     return (
         <>
-            <HeaderContent name={"Tables"} />
+            <HeaderContent name={"Mesas"} />
             {/* Main content */}
 
             <section className="content">
@@ -173,7 +173,7 @@ const TableScreen = ({ history }) => {
                         <div className="col-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Tables</h3>
+                                    <h3 className="card-title">Mesas</h3>
                                     <div className="card-tools">
                                         <Search
                                             keyword={keyword}

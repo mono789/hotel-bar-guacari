@@ -14,7 +14,7 @@ const Table = ({ table }) => {
                 <div className="inner">
                     <h3>{table.name}</h3>
                     <p>
-                        Órdenes ID:{" "}
+                        Órden ID:{" "}
                         {table.orders.map((order) => {
                             return order.id;
                         })}

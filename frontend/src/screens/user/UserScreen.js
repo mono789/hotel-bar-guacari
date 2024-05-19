@@ -64,14 +64,14 @@ const UserScreen = ({ history }) => {
 
         let errorsCheck = {};
         if (!name) {
-            errorsCheck.name = "Name is required";
+            errorsCheck.name = "Nombre es requerido";
         }
         if (!password) {
-            errorsCheck.password = "Password is required";
+            errorsCheck.password = "Contraseña es requerida";
         }
 
         if (!email) {
-            errorsCheck.email = "Email is required";
+            errorsCheck.email = "Email es requerido";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -97,11 +97,11 @@ const UserScreen = ({ history }) => {
             <thead>
                 <tr>
                     <th className="d-none d-sm-table-cell">ID</th>
-                    <th>Name</th>
+                    <th>Nombre</th>
                     <th>Email</th>
-                    <th className="d-none d-sm-table-cell">Photo</th>
-                    <th className="d-none d-sm-table-cell">Admin</th>
-                    <th className="d-none d-sm-table-cell">Created At</th>
+                    <th className="d-none d-sm-table-cell">Foto</th>
+                    <th className="d-none d-sm-table-cell">Administrador</th>
+                    <th className="d-none d-sm-table-cell">Creado en</th>
                     <th></th>
                 </tr>
             </thead>
@@ -147,7 +147,7 @@ const UserScreen = ({ history }) => {
                                     to={`/user/${user.id}/edit`}
                                     className="btn btn-warning btn-lg"
                                 >
-                                    Edit
+                                    Editar
                                 </Link>
                             )}
                         </td>
@@ -173,7 +173,7 @@ const UserScreen = ({ history }) => {
                 <LoaderHandler loading={createLoading} error={createError} />
                 <form onSubmit={handleSubmit}>
                     <Input
-                        name={"name"}
+                        name={"nombre"}
                         type={"text"}
                         data={name}
                         setData={setName}
@@ -187,7 +187,7 @@ const UserScreen = ({ history }) => {
                         errors={errors}
                     />
                     <Input
-                        name={"password"}
+                        name={"contraseña"}
                         type={"password"}
                         data={password}
                         setData={setPassword}
@@ -201,7 +201,7 @@ const UserScreen = ({ history }) => {
 
                     <hr />
                     <button type="submit" className="btn btn-primary">
-                        Submit
+                        Confirmar
                     </button>
                     <ModalButton
                         modal={modalIsOpen}
@@ -216,7 +216,7 @@ const UserScreen = ({ history }) => {
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Users"} />
+            <HeaderContent name={"Usuarios"} />
             {/* Main content */}
 
             <section className="content">
@@ -226,7 +226,7 @@ const UserScreen = ({ history }) => {
                         <div className="col-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Users table</h3>
+                                    <h3 className="card-title">Tabla de usuarios</h3>
                                     <div className="card-tools">
                                         <Search
                                             keyword={keyword}

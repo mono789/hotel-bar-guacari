@@ -30,7 +30,7 @@ const DeliveryScreen = ({ history }) => {
     const renderCreateButton = () => (
         <Link to="/order/create/delivery">
             <button className="btn btn-success btn-lg">
-                <i className="fas fa-truck" /> New Delivery
+                <i className="fas fa-truck" /> Nuevo domicilio
             </button>
         </Link>
     );

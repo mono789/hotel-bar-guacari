@@ -31,7 +31,7 @@ const OrderScreen = ({ history }) => {
     const renderCreateButton = () => (
         <Link to="/order/create">
             <button className="btn btn-success btn-lg">
-                <i className="fas fa-edit" /> New Order
+                <i className="fas fa-edit" /> Nueva órden
             </button>
         </Link>
     );
@@ -41,9 +41,9 @@ const OrderScreen = ({ history }) => {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Client</th>
-                    <th className="d-none d-sm-table-cell">Table</th>
-                    <th>Paid</th>
+                    <th>Cliente</th>
+                    <th className="d-none d-sm-table-cell">Mesa</th>
+                    <th>Pagada</th>
                     <th>Total</th>
                     <th></th>
                 </tr>
@@ -60,7 +60,7 @@ const OrderScreen = ({ history }) => {
                                 </span>
                             ) : (
                                 <span className={"badge bg-info"}>
-                                    DELIVERY
+                                    DOMICILIO
                                 </span>
                             )}
                         </td>
@@ -85,7 +85,7 @@ const OrderScreen = ({ history }) => {
                                 to={`/order/${order.id}/view`}
                                 className="btn btn-info btn-lg"
                             >
-                                View
+                                Ver
                             </Link>
                         </td>
                     </tr>
@@ -98,7 +98,7 @@ const OrderScreen = ({ history }) => {
         <>
             <div className="card ">
                 <div className="card-header">
-                    <h3 className="card-title">All orders</h3>
+                    <h3 className="card-title">Todas las órdenes</h3>
                     <div className="card-tools">
                         <Search
                             keyword={keyword}
@@ -125,7 +125,7 @@ const OrderScreen = ({ history }) => {
 
     return (
         <>
-            <HeaderContent name={"Orders"} />
+            <HeaderContent name={"Órdenes"} />
 
             <section className="content">
                 <div className="container-fluid">

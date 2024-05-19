@@ -28,6 +28,19 @@ import { listTables } from "../../actions/tableActions";
 import { listClients } from "../../actions/clientActions";
 import { createOrder } from "../../actions/orderActions";
 
+import { allTables } from "../../actions/tableActions"
+
+import Table from "../../components/Table";
+import Product from "../../components/Product";
+
+import {
+    OccupiedTableLoader,
+    ProductLoader
+} from "../../components/loader/SkeletonLoaders";
+
+import { listProducts, createProduct } from "../../actions/productActions";
+import { listCategories } from "../../actions/categoryActions";
+
 const OrderCreateScreen = ({ history, match }) => {
     /* Get table from url */
     const tableFromUrl = window.location.href.indexOf("table") !== -1;
@@ -55,11 +68,20 @@ const OrderCreateScreen = ({ history, match }) => {
     const tableList = useSelector((state) => state.tableList);
     const { tables } = tableList;
 
+    const productList = useSelector((state) => state.productList);
+    const { products } = productList;
+
     //order create state
     const orderCreate = useSelector((state) => state.orderCreate);
     const { success, loading, error } = orderCreate;
 
     useEffect(() => {
+        dispatch(allTables());
+    }, [dispatch, history, userInfo]);
+
+    useEffect(() => {
+        dispatch(allTables());
+        dispatch(listProducts());
         if (success) {
             dispatch({ type: PRODUCT_LIST_RESET });
             dispatch({ type: ORDER_CREATE_RESET });
@@ -200,6 +222,33 @@ const OrderCreateScreen = ({ history, match }) => {
         </button>
     );
 
+    const productLoader = () => {
+        let tableSkeleton = [];
+        for (let i = 0; i < 16; i++) {
+            tableSkeleton.push(
+                <div className="col-12 col-md-6 col-lg-4 col-xl-3" key={i}>
+                    {" "}
+                    <ProductLoader />{" "}
+                </div>
+            );
+        }
+        return tableSkeleton;
+    };
+
+    const filterTablesByState = (isOccupied) => {
+        const mappedTables = tables.filter((table) => {
+            return table.occupied === isOccupied;
+        });
+        return mappedTables;
+    };
+
+    const renderProducts = () =>
+        products.map((product) => (
+            <div key={product.id} className="col-12 col-md-6 col-lg-4 col-xl-3">
+                <Product product={product} />
+            </div>
+        ));
+
     return (
         <>
             {/* Content Header (Page header) */}
@@ -220,15 +269,18 @@ const OrderCreateScreen = ({ history, match }) => {
                                 {/* /.card-header */}
                                 <div className="card-body">
                                     <div className="row">
-                                        <div className="col-12 col-lg-6">
+                                        <div className="col-12 col-lg-12">
                                             {renderProductsTable()}
                                         </div>
-                                        <div className="col-12 col-lg-6">
+                                    </div>
+                                    <div className="col-12 col-lg-12">
                                             {renderCart()}
-                                            <div className="row">
+                                            <div >
+                                                <h3 className="card-title">Selecciona la mesa:</h3>
                                                 <div className="col-12 col-md-6">
                                                     {renderTablesSelect()}
                                                 </div>
+                                                <h3 className="card-title">Selecciona el cliente:</h3>
                                                 <div className="col-12 col-md-6">
                                                     {renderClientsSelect()}
                                                 </div>
@@ -238,7 +290,6 @@ const OrderCreateScreen = ({ history, match }) => {
                                             </div>
                                             {renderNoteTextarea()}
                                         </div>
-                                    </div>
                                     {renderSubmitButton()}
                                 </div>
                                 {/* /.card-body */}

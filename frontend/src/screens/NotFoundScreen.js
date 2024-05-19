@@ -2,7 +2,7 @@ import React from 'react';
 
 const NotFoundScreen = () => {
     return ( <h1>
-        Not Found
+        No encontrado
     </h1> );
 }
  

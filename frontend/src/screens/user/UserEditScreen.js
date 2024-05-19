@@ -78,15 +78,15 @@ const UserEditScreen = ({ history, match }) => {
 
         let errorsCheck = {};
         if (!name) {
-            errorsCheck.name = "Name is required.";
+            errorsCheck.name = "Nombre es requerido.";
         }
         if (password > 1 && password < 6) {
             errorsCheck.password =
-                "Password must be at least 6 characters long.";
+                "La contraseña debe tener 6 carácteres o más.";
         }
 
         if (!email) {
-            errorsCheck.email = "Email is required.";
+            errorsCheck.email = "Email es requerido.";
         }
 
         if (Object.keys(errorsCheck).length > 0) {
@@ -112,7 +112,7 @@ const UserEditScreen = ({ history, match }) => {
     const renderForm = () => (
         <form onSubmit={handleSubmit}>
             <Input
-                name={"name"}
+                name={"nombre"}
                 type={"text"}
                 data={name}
                 setData={setName}
@@ -126,18 +126,18 @@ const UserEditScreen = ({ history, match }) => {
                 errors={errors}
             />
             <Input
-                name={"password"}
+                name={"contraseña"}
                 type={"password"}
                 data={password}
                 setData={setPassword}
                 errors={errors}
             />
-            <Checkbox name={"Reset Avatar"} data={avatar} setData={setAvatar} />
+            <Checkbox name={"Restablecer Avatar"} data={avatar} setData={setAvatar} />
             <hr />
-            <Checkbox name={"Admin"} data={isAdmin} setData={setIsAdmin} />
+            <Checkbox name={"Administrador"} data={isAdmin} setData={setIsAdmin} />
             <hr />
             <button type="submit" className="btn btn-success">
-                Submit
+                Confirmar
             </button>
         </form>
     );
@@ -145,7 +145,7 @@ const UserEditScreen = ({ history, match }) => {
     return (
         <>
             {/* Content Header (Page header) */}
-            <HeaderContent name={"Users"} />
+            <HeaderContent name={"Usuarios"} />
 
             {/* Main content */}
 
@@ -156,7 +156,7 @@ const UserEditScreen = ({ history, match }) => {
                         <div className="col-12 col-md-6">
                             <div className="card">
                                 <div className="card-header">
-                                    <h3 className="card-title">Edit User</h3>
+                                    <h3 className="card-title">Editar Usuario</h3>
                                 </div>
                                 {/* /.card-header */}
                                 <div className="card-body">
